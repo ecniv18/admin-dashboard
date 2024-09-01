@@ -12,6 +12,45 @@
   --clr-cyan-950: #083344;
 }
 
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+}
+
+button {
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icon-sm {
+  /* modern css reset sets img to a block element */
+  width: 25px;
+}
+
+.icon-md {
+  width: 50px;
+}
+
+.fz-sm {
+  font-size: 1rem;
+}
+
+.fz-md {
+  font-size: 1.3rem;
+}
+
+.fz-lg {
+  font-size: 1.75rem;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid var(--clr-cyan-300);
+}
+
 .wrapper {
   max-width: 1440px;
   height: 100vh;
@@ -21,12 +60,17 @@
   grid-template-rows: repeat(12, 1fr);
 }
 
+/* Main components layout */
 .header {
-  background-color: var(--clr-cyan-50);
-  grid-area: 3 / 4 / 1 / 13;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-  box-shadow: 0 4px 15px -7px var(--clr-cyan-400);
+  background-color: var(--clr-cyan-50);
+  grid-area: 1 / 4 / 4 / 13;
+  z-index: 2;
+  padding: 0 2rem;
+  box-shadow: 0 9px 15px -15px var(--clr-cyan-400);
 }
 
 .sidebar {
@@ -38,4 +82,39 @@
 .main {
   background-color: var(--clr-cyan-100);
   grid-area: 3 / 4 / 13 / 13;
+}
+
+/* Sub components */
+.header .upper-bar,
+.header .lower-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header .search input {
+  width: 400px;
+}
+
+.header .upper-bar-profile,
+.header .lower-bar-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header .lower-bar-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.header .lower-bar-actions .btn {
+  background: var(--clr-cyan-300);
+  color: var(--clr-cyan-950);
 }
